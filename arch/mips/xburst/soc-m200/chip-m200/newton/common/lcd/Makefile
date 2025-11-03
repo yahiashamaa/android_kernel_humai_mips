@@ -11,3 +11,4 @@ obj-$(CONFIG_LCD_X163) += lcd-x163.o
 obj-$(CONFIG_LCD_BOE_TFT320320) += lcd-boe_tft320320.o
 obj-$(CONFIG_LCD_EDO_E1392AM1)  += lcd-edo_e1392am1.o digital_pulse.o
 obj-$(CONFIG_LCD_AUO_H139BLN01) += lcd-auo_h139bln01.o
+obj-$(CONFIG_LCD_TRULY_AM013RN90044) += lcd-truly_am013rn90044.o digital_pulse.o

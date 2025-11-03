@@ -253,6 +253,9 @@ static int __init board_base_init(void)
 #ifdef CONFIG_LCD_TRULY_TDO_HD0499K
 	mipi_dsi_register_lcd_device(&truly_tdo_hd0499k_device);
 #endif
+#ifdef CONFIG_LCD_TRULY_AM013RN90044
+	mipi_dsi_register_lcd_device(&truly_am013rn90044_device);
+#endif
 
 #ifdef CONFIG_LCD_X163
 	mipi_dsi_register_lcd_device(&auo_x163_device);

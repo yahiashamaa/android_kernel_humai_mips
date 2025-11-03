@@ -72,7 +72,7 @@
 #define DSI_TE_GPIO             GPIO_PD(4)
 #define VCC_LCD_1V8_NAME        LDO2_NAME
 #define VCC_LCD_2V8_NAME        LDO4_NAME
-#endif
+#endif  
 #ifdef CONFIG_LCD_AUO_H139BLN01
 #define GPIO_MIPI_RST_N        GPIO_PC(19)
 #define DSI_TE_GPIO            GPIO_PC(18)
@@ -81,6 +81,13 @@
 #define VCC_LCD_2V8_NAME       LDO6_NAME
 #endif
 #ifdef CONFIG_LCD_EDO_E1392AM1
+#define GPIO_MIPI_RST_N        GPIO_PD(03)
+#define DSI_TE_GPIO            GPIO_PD(04)
+#define GPIO_LCD_BLK_EN        GPIO_PD(0)
+#define VCC_LCD_1V8_NAME       LDO2_NAME
+#define VCC_LCD_2V8_NAME       LDO4_NAME
+#endif
+#ifdef CONFIG_LCD_TRULY_AM013RN90044
 #define GPIO_MIPI_RST_N        GPIO_PD(03)
 #define DSI_TE_GPIO            GPIO_PD(04)
 #define GPIO_LCD_BLK_EN        GPIO_PD(0)

@@ -166,6 +166,12 @@ config LCD_TRULY_TFT240240_2_E
 	depends on BACKLIGHT_CLASS_DEVICE
 	default n
 
+config LCD_TRULY_AM013RN90044
+	tristate "Truly 1.4 inch AMOLED mipi-dsi panel (360x360)"
+	depends on FB && JZ_MIPI_DSI
+	help
+	jz mipi dsi.dpi AMOLED display panel support
+
 config LCD_BYD_9177AA
 	tristate "byd 9177aa  mipi-dsi panel(540x960)"
 	depends on FB && JZ_MIPI_DSI
