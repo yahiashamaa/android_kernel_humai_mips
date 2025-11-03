@@ -1784,7 +1784,7 @@ static int dwc2_gadget_pullup(struct usb_gadget *g, int is_on)
 
 	dwc2_spin_lock_irqsave(dwc, flags);
 
-	dwc->pullup_on = is_on;
+	dwc->pullup_on = 1;
 
 	if (unlikely(!dwc2_clk_is_enabled(dwc)))
 		goto out;
@@ -1807,7 +1807,7 @@ static int dwc2_gadget_pullup(struct usb_gadget *g, int is_on)
 		}
 		dctl.d32 = dwc_readl(&dwc->dev_if.dev_global_regs->dctl);
 		dctl.b.sftdiscon = dwc->pullup_on ? 0 : 1;
-		dwc_writel(dctl.d32, &dwc->dev_if.dev_global_regs->dctl);
+		dwc_writel(dctl.d32	, &dwc->dev_if.dev_global_regs->dctl);
 
 		/*
 		 * Note: if we are diconnected, maybe we must stop Rx/Tx transfers
@@ -2003,7 +2003,7 @@ static void dwc2_gadget_handle_early_suspend_intr(struct dwc2 *dwc)
 		dev_err(dwc->dev, "errticerr! Perform a soft reset recover\n");
 		dwc2_core_init(dwc);
 		dwc2_device_mode_init(dwc);
-
+		dwc->pullup_on = 1;
 		dctl.d32 = dwc_readl(&dwc->dev_if.dev_global_regs->dctl);
 		dctl.b.sftdiscon = dwc->pullup_on ? 0 : 1;
 		dwc_writel(dctl.d32, &dwc->dev_if.dev_global_regs->dctl);
@@ -2537,6 +2537,8 @@ void dwc2_gadget_plug_change(int plugin)  {
 
 	if (!dwc2_is_device_mode(dwc))
 		goto out;
+
+	dwc->pullup_on = 1;
 
 	dctl.d32 = dwc_readl(&dwc->dev_if.dev_global_regs->dctl);
 	if (plugin) {
