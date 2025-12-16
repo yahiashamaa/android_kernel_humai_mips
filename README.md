@@ -1,6 +1,6 @@
 ![pace-status](https://img.shields.io/badge/Pace%20Kernel-boots-yellow.svg)
 ![stratos-status](https://img.shields.io/badge/Stratos%20Kernel-none-inactive.svg)
-![verge-status](https://img.shields.io/badge/Verge%20Kernel-none-inactive.svg)
+![verge-status](https://img.shields.io/badge/Verge%20Kernel-boots-active.svg)
 
 # Kernels for Amazfit watches
 ### Development of working kernel sources for Amazfit watches
@@ -15,7 +15,7 @@ In the main branch (here) are the Ingenic's Newton 2 Plus kernel-3.10.14 sources
 |----------|---------|-------------|
 | Pace     | boots   | [pace-mods-development](https://github.com/amazfitDev/platform_kernel-3.10.14/tree/pace-mods-development) |
 | Stratos  | -       | -           |
-| Verge    | -       | -           |
+| Verge    | active  |  [qogir](https://github.com/yahiashamaa/android_kernel_huami_mips/tree/qogir) |        |
 
 *hopfully we will have only one source/branch for all on the future*
 
